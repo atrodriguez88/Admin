@@ -8,6 +8,8 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
+import { PagesRoutingModule } from './pages.router';
+
 
 @NgModule({
     declarations: [
@@ -18,7 +20,8 @@ import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
         NoPageFoundComponent
     ],
     imports: [
-        SharedModule
+        SharedModule,
+        PagesRoutingModule
     ],
     exports: [
         PagesComponent,
