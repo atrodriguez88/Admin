@@ -1,3 +1,45 @@
-<p>
-  progress works!
-</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+
+      <h4 class="card-title">
+        Progress Bar
+      </h4>
+      <div class="card-body">
+
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" [style.width]="porcent1+ '%'" style="height:15px" role="progressbar">
+          {{porcent1 + '%'}} </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+
+      <h4 class="card-title">
+        Progress Bar
+      </h4>
+      <div class="card-body">
+
+        <div class="progress">
+          <div class="progress-bar bg-primary" role="progressbar" [style.width]="porcent2+ '%'" style="height:15px" role="progressbar">
+          {{porcent2 + '%'}} </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-6">
+    <app-increment (changeValue)='updatePorcent1($event)' [titulo]='otraManera' [porcent]='porcent1'></app-increment>
+  </div>
+
+  <div class="col-6">
+    <app-increment (changeValue)='porcent2 = $event' titulo='Progress Blue' [porcent]='porcent2'></app-increment>
+  </div>
+</div>

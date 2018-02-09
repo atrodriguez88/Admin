@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { SharedModule } from '../shared/shared.module';
-
+// Pages
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
-import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
+// Modules
+import { SharedModule } from '../shared/shared.module';
+
+// Temporal
+import { IncrementComponent } from '../components/increment/increment.component';
+
+// Route
 import { PagesRoutingModule } from './pages.router';
-
 
 @NgModule({
     declarations: [
@@ -17,18 +22,18 @@ import { PagesRoutingModule } from './pages.router';
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
-        NoPageFoundComponent
+        IncrementComponent
     ],
     imports: [
         SharedModule,
+        FormsModule,
         PagesRoutingModule
     ],
     exports: [
         PagesComponent,
         DashboardComponent,
         ProgressComponent,
-        Graficas1Component,
-        NoPageFoundComponent
+        Graficas1Component
     ],
     providers: [],
 })
