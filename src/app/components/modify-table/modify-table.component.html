@@ -1,0 +1,20 @@
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <h5 class="card-title">{{tit}}</h5>
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="text" name="first" class="form-control" placeholder="First name" [(ngModel)]="first">
+        </div>
+        <div class="col">
+          <input type="text" name="last" class="form-control" placeholder="Last name" [(ngModel)]="last">
+        </div>
+        <div class="col">
+          <button class="btn btn-primary" value="Update" (click)="changeValues()">
+              <i class="mdi mdi-update"></i> Update
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
