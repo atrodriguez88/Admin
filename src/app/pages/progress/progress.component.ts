@@ -8,7 +8,7 @@ import { Component, OnInit, Output } from '@angular/core';
 export class ProgressComponent implements OnInit {
 
   // Se puede utilizar tambien [titulo]='otraManera'
-  @Output() otraManera = 'Progress Greeeen';
+  @Output() otraManera = 'Progress Green';
 
   @Output() porcent1: number = 25;
   @Output() porcent2: number = 15;

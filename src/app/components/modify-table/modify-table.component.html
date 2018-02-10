@@ -4,10 +4,12 @@
     <form>
       <div class="row">
         <div class="col">
-          <input type="text" name="first" class="form-control" placeholder="First name" [(ngModel)]="first">
+          <input type="text" name="first" class="form-control" placeholder="First name" [(ngModel)]="first"
+              (click)="cleanFirst()">
         </div>
         <div class="col">
-          <input type="text" name="last" class="form-control" placeholder="Last name" [(ngModel)]="last">
+          <input type="text" name="last" class="form-control" placeholder="Last name" [(ngModel)]="last"
+              (click)="cleanLast()">
         </div>
         <div class="col">
           <button class="btn btn-primary" value="Update" (click)="changeValues()">

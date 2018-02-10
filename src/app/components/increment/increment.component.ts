@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-increment',
@@ -6,6 +6,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styles: []
 })
 export class IncrementComponent implements OnInit {
+
+  @ViewChild('txtIncremet') txt: ElementRef;
 
   @Input('titulo') leyend: string;
   @Input() porcent: number;
@@ -16,8 +18,6 @@ export class IncrementComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Leyend', this.leyend);
-    console.log('Porcent', this.porcent);
   }
 
   incrementProgress() {
@@ -28,6 +28,7 @@ export class IncrementComponent implements OnInit {
       this.porcent = 100;
     }
     this.changeValue.emit(this.porcent);
+    this.txt.nativeElement.focus();
   }
 
   decrementProgress() {
@@ -38,6 +39,25 @@ export class IncrementComponent implements OnInit {
     else {
       this.porcent = 0;
     }
+    this.changeValue.emit(this.porcent);
+    this.txt.nativeElement.focus();
+  }
+
+  onChange(event) {
+
+    if (event >= 100) {
+      this.porcent = 100;
+    }
+    else if (event <= 0) {
+      this.porcent = 0;
+    }
+    else {
+      this.porcent = event;
+    }
+
+    // other way
+    // this.txt.nativeElement.value = this.porcent
+    this.txt['value'] = this.porcent;
     this.changeValue.emit(this.porcent);
   }
 

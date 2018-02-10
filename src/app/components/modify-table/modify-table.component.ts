@@ -16,8 +16,6 @@ export class ModifyTableComponent implements OnInit {
   @Output() oFirst = new EventEmitter<string>();
   @Output() oLast = new EventEmitter<string>();
 
-  flag = true;
-
   constructor() { }
 
   ngOnInit() {
@@ -32,18 +30,26 @@ export class ModifyTableComponent implements OnInit {
     }
     else {
       // console.log(this.first.match(/[a - z]/));
-      this.first = `Only letters, not numbers or especial characters`;
+      this.first = `Not Null`;
     }
 
     if (this.last.length > 0) {
       this.last = this.last.toUpperCase();
     }
     else {
-      this.last = `Only letters, not numbers or especial characters`;
+      this.last = `Not Null`;
     }
-    console.log(this.first, this.last);
     this.oFirst.emit(this.first);
     this.oLast.emit(this.last);
+  }
+
+  cleanFirst() {
+    document.getElementsByName('first')[0].value = '';
+    this.first = document.getElementsByName('first')[0].value;
+  }
+  cleanLast() {
+    document.getElementsByName('last')[0].value = '';
+    this.last = document.getElementsByName('last')[0].value;
   }
 
 }
