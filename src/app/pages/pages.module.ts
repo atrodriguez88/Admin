@@ -11,9 +11,13 @@ import { TableComponent } from './table/table.component';
 // Modules
 import { SharedModule } from '../shared/shared.module';
 
+// ng2-charts
+import { ChartsModule } from 'ng2-charts';
+
 // Temporal
 import { IncrementComponent } from '../components/increment/increment.component';
 import { ModifyTableComponent } from '../components/modify-table/modify-table.component';
+import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 
 // Route
 import { PagesRoutingModule } from './pages.router';
@@ -26,19 +30,22 @@ import { PagesRoutingModule } from './pages.router';
         Graficas1Component,
         IncrementComponent,
         TableComponent,
-        ModifyTableComponent
+        ModifyTableComponent,
+        GraficoDonaComponent
     ],
     imports: [
         SharedModule,
         FormsModule,
-        PagesRoutingModule
+        PagesRoutingModule,
+        ChartsModule
     ],
     exports: [
         PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
-        TableComponent
+        TableComponent,
+        GraficoDonaComponent
     ],
     providers: [],
 })
