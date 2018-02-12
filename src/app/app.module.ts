@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app.router';
 // Services
 import { SharedService } from './services/shared.service';
 import { SidebarService } from './services/sidebar.service';
+import { SettingsService } from './services/settings.service';
 
 // Modules
 import { PagesModule } from './pages/pages.module';
@@ -34,7 +35,8 @@ import { PagesModule } from './pages/pages.module';
   ],
   providers: [
     SharedService,
-    SidebarService
+    SidebarService,
+    SettingsService
   ],
   bootstrap: [AppComponent]
 })
