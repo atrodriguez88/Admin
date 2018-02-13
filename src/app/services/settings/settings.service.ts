@@ -14,7 +14,6 @@ export class SettingsService {
   }
 
   saveSettings() {
-    console.log(`Save Settings`);
     localStorage.setItem(`settings`, JSON.stringify(this.setting));
   }
 
@@ -22,10 +21,8 @@ export class SettingsService {
     if (localStorage.getItem(`settings`) {
       this.setting = JSON.parse(localStorage.getItem(`settings`));
       this.applyTheme(this.setting.theme);
-      console.log(`Load Settings`);
     }
     else {
-      console.log(`Load Settings by Default`);
       this.applyTheme(this.setting.theme);
     }
   }

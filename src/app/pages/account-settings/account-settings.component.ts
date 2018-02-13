@@ -1,6 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
-import { SettingsService } from '../../services/settings.service';
+import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../../services/service.index';
 
 @Component({
   selector: 'app-account-settings',
@@ -10,9 +9,10 @@ import { SettingsService } from '../../services/settings.service';
 export class AccountSettingsComponent implements OnInit {
 
 
-  constructor( @Inject(DOCUMENT) private _document, private _settings: SettingsService) { }
+  constructor(private _settings: SettingsService) { }
 
   ngOnInit() {
+    this.putCheck();
   }
 
   changeTheme(theme: string, link: any) {
@@ -30,6 +30,17 @@ export class AccountSettingsComponent implements OnInit {
       elem.classList.remove('working');
     }
     link.classList.add('working');
+  }
+
+  putCheck() {
+    const elementos: any = document.getElementsByClassName('selector');
+    const theme = this._settings.setting.theme;
+    for (const elem of elementos) {
+      if (elem.getAttribute('data-theme') === theme) {
+        elem.classList.add('working');
+        break;
+      }
+    }
   }
 
 }

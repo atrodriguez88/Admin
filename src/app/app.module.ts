@@ -13,9 +13,7 @@ import { NoPageFoundComponent } from './pages/no-page-found/no-page-found.compon
 import { AppRoutingModule } from './app.router';
 
 // Services
-import { SharedService } from './services/shared.service';
-import { SidebarService } from './services/sidebar.service';
-import { SettingsService } from './services/settings.service';
+import { ServiceModule } from './services/service.module';
 
 // Modules
 import { PagesModule } from './pages/pages.module';
@@ -31,13 +29,10 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
-  providers: [
-    SharedService,
-    SidebarService,
-    SettingsService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
