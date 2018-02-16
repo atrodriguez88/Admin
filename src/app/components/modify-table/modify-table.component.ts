@@ -44,12 +44,12 @@ export class ModifyTableComponent implements OnInit {
   }
 
   cleanFirst() {
-    document.getElementsByName('first')[0].value = '';
-    this.first = document.getElementsByName('first')[0].value;
+    document.getElementsByName('first')[0].nodeValue = '';
+    this.first = document.getElementsByName('first')[0].nodeValue;
   }
   cleanLast() {
-    document.getElementsByName('last')[0].value = '';
-    this.last = document.getElementsByName('last')[0].value;
+    document.getElementsByName('last')[0].nodeValue = '';
+    this.last = document.getElementsByName('last')[0].nodeValue;
   }
 
 }

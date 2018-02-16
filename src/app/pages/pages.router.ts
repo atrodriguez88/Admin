@@ -7,6 +7,8 @@ import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { TableComponent } from './table/table.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes = [
     {
@@ -18,6 +20,8 @@ const routes: Routes = [
             { path: 'graficas1', component: Graficas1Component },
             { path: 'table', component: TableComponent },
             { path: 'account', component: AccountSettingsComponent },
+            { path: 'promises', component: PromisesComponent },
+            { path: 'rxjs', component: RxjsComponent },
             { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
         ]
     }

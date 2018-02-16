@@ -23,6 +23,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { IncrementComponent } from '../components/increment/increment.component';
 import { ModifyTableComponent } from '../components/modify-table/modify-table.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
         TableComponent,
         ModifyTableComponent,
         GraficoDonaComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromisesComponent,
+        RxjsComponent
     ],
     imports: [
         SharedModule,

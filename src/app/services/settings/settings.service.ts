@@ -18,7 +18,7 @@ export class SettingsService {
   }
 
   loadSettings() {
-    if (localStorage.getItem(`settings`) {
+    if (localStorage.getItem(`settings`)) {
       this.setting = JSON.parse(localStorage.getItem(`settings`));
       this.applyTheme(this.setting.theme);
     }
