@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 // tslint:disable-next-line:import-blacklist
-import { Observable } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styles: []
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnInit, OnDestroy {
+
+  subscription: Subscription;
 
   constructor() {
 
-
-    this.returnObserv().retry(2)
-      .subscribe(
+    this.subscription = this.returnObserv().subscribe(
       value => { console.log('Subscribe', value); }, // Next
       error => { console.error('Error for 2 time', error); },
       () => { console.log('Observable is finished'); },
@@ -24,16 +24,24 @@ export class RxjsComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   returnObserv() {
 
-    const obs = new Observable<number>(observerr => {
+    const obs = new Observable<any>(observerr => {
 
-      let cont = 0;
+      let cont = 0;  // Puedo usar esta contante para no verme en la obligacion de usar el map()
       const interv = setInterval(
         () => {
 
+          let obj = {   // Uso del map() para objetos
+            value: cont
+          };
           cont += 1;
-          observerr.next(cont);
+          // observerr.next(cont);
+          observerr.next(obj);
 
           if (cont === 5) {
             clearInterval(interv); // Stoped Interval... but Observable continue listed
@@ -47,7 +55,21 @@ export class RxjsComponent implements OnInit {
         1000
       );
 
-    });
+    })
+      .retry(2)
+      .map((obj: any, index?) => {     // index is opcional
+        return obj.value + index;
+      })
+      .filter((valor: number, index) => {   // index is opcional
+
+        if (valor % 2 === 0) {
+          // even
+          return false;
+        } else {
+          // odd
+          return true;
+        }
+      });
     return obs;
 
   }
