@@ -15,13 +15,13 @@ const routes: Routes = [
         path: '',
         component: PagesComponent,
         children: [
-            { path: 'dashboard', component: DashboardComponent },
-            { path: 'progress', component: ProgressComponent },
-            { path: 'graficas1', component: Graficas1Component },
-            { path: 'table', component: TableComponent },
-            { path: 'account', component: AccountSettingsComponent },
-            { path: 'promises', component: PromisesComponent },
-            { path: 'rxjs', component: RxjsComponent },
+            { path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'} },
+            { path: 'progress', component: ProgressComponent, data: {title: 'Progress'} },
+            { path: 'graficas1', component: Graficas1Component, data: {title: 'Grafics'} },
+            { path: 'table', component: TableComponent, data: {title: 'Tables'} },
+            { path: 'account', component: AccountSettingsComponent, data: {title: 'Account Settings'} },
+            { path: 'promises', component: PromisesComponent, data: {title: 'Promises'} },
+            { path: 'rxjs', component: RxjsComponent, data: {title: 'RxJs'} },
             { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
         ]
     }
