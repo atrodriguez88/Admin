@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log(this.form.value);
+    console.log(this.form);
     if (!this.form.value.conditions) {
       swal("Oops!", "Something went wrong!", "error");
     }
