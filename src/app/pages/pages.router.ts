@@ -9,6 +9,7 @@ import { TableComponent } from './table/table.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
     {
@@ -22,6 +23,7 @@ const routes: Routes = [
             { path: 'account', component: AccountSettingsComponent, data: {title: 'Account Settings'} },
             { path: 'promises', component: PromisesComponent, data: {title: 'Promises'} },
             { path: 'rxjs', component: RxjsComponent, data: {title: 'RxJs'} },
+            { path: 'profile', component: ProfileComponent, data: {title: 'Profile'} },
             { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
         ]
     }
