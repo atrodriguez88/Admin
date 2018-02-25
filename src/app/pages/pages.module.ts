@@ -26,9 +26,11 @@ import { PipesModule } from '../pipes/pipes.module';
 import { IncrementComponent } from '../components/increment/increment.component';
 import { ModifyTableComponent } from '../components/modify-table/modify-table.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -42,10 +44,12 @@ import { ProfileComponent } from './profile/profile.component';
         TableComponent,
         ModifyTableComponent,
         GraficoDonaComponent,
+        ModalUploadComponent,
         AccountSettingsComponent,
         PromisesComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsersComponent
     ],
     imports: [
         SharedModule,
@@ -61,7 +65,8 @@ import { ProfileComponent } from './profile/profile.component';
         ProgressComponent,
         Graficas1Component,
         TableComponent,
-        GraficoDonaComponent
+        GraficoDonaComponent,
+        ModalUploadComponent
     ],
     providers: [],
 })
