@@ -35,17 +35,17 @@
 
   <div class="col-lg-5">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body card text-center">
         <h4 class="card-title">User Profile</h4>
         <h6 class="card-subtitle">User Name</h6>
 
-        <img src="" alt="">
+        <img [src]="imgTemporary" class="w150" alt="">
 
-        <input class="btn" type="file" name="" id="">
+        <input class="btn" type="file" (change)="selectImg($event)">
 
         <br>
 
-        <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+        <button type="submit" [disabled]="img == null" class="btn btn-block btn-success waves-effect waves-light m-r-10" (click)="upLoad()">
           <i class="fa fa-update"> </i> Save
         </button>
 
