@@ -19,6 +19,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
 import { TableComponent } from './table/table.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { SearchComponent } from './search/search.component';
 
 // Pipes
 import { PipesModule } from '../pipes/pipes.module';
@@ -49,7 +50,8 @@ import { UsersComponent } from './users/users.component';
         PromisesComponent,
         RxjsComponent,
         ProfileComponent,
-        UsersComponent
+        UsersComponent,
+        SearchComponent
     ],
     imports: [
         SharedModule,

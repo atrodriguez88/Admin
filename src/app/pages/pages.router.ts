@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core/src/metadata/ng_module';
 import { RouterModule, Routes } from '@angular/router';
 
+// Pages
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -11,22 +12,32 @@ import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
+import { SearchComponent } from './search/search.component';
+
+// Guards
+// import { AdminGuard } from '../services/service.index';
 
 const routes: Routes = [
     {
         path: '',
         component: PagesComponent,
         children: [
-            { path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'} },
-            { path: 'progress', component: ProgressComponent, data: {title: 'Progress'} },
-            { path: 'graficas1', component: Graficas1Component, data: {title: 'Grafics'} },
-            { path: 'table', component: TableComponent, data: {title: 'Tables'} },
-            { path: 'account', component: AccountSettingsComponent, data: {title: 'Account Settings'} },
-            { path: 'promises', component: PromisesComponent, data: {title: 'Promises'} },
-            { path: 'rxjs', component: RxjsComponent, data: {title: 'RxJs'} },
-            { path: 'profile', component: ProfileComponent, data: {title: 'Profile'} },
+            { path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' } },
+            { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
+            { path: 'graficas1', component: Graficas1Component, data: { title: 'Grafics' } },
+            { path: 'table', component: TableComponent, data: { title: 'Tables' } },
+            {
+                path: 'account',
+                component: AccountSettingsComponent,
+                // canActivate: [AdminGuard],
+                data: { title: 'Account Settings' }
+            },
+            { path: 'promises', component: PromisesComponent, data: { title: 'Promises' } },
+            { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
+            { path: 'profile', component: ProfileComponent, data: { title: 'Profile' } },
+            { path: 'search/:term', component: SearchComponent, data: { title: 'Search' } },
             // Maintenance
-            { path: 'users', component: UsersComponent, data: {title: 'User Maintenance'} },
+            { path: 'users', component: UsersComponent, data: { title: 'User Maintenance' } },
             { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
         ]
     }
@@ -38,4 +49,4 @@ const routes: Routes = [
 // })
 // export class PagesRoutingModule { }
 
- export const PagesRoutingModule = RouterModule.forChild(routes);
+export const PagesRoutingModule = RouterModule.forChild(routes);

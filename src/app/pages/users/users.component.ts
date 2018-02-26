@@ -173,7 +173,7 @@ export class UsersComponent implements OnInit {
           text: `Yes`,
           value: `delete`,
         }
-        cancel: `No`,
+        cancel: `No`
       },
     })
       .then((value) => {

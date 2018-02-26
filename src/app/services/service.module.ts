@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 
-// Services
-import { SettingsService, SharedService, SidebarService, UpLoadFileService } from './service.index';
+
+
+// Guards and Services
+import { SettingsService, SharedService, SidebarService, UpLoadFileService, AdminGuard } from './service.index';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { SettingsService, SharedService, SidebarService, UpLoadFileService } fro
     SettingsService,
     SharedService,
     SidebarService,
-    UpLoadFileService
+    UpLoadFileService,
+    AdminGuard
   ]
 })
 export class ServiceModule { }
