@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as swal from 'sweetalert';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-users',
